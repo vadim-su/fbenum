@@ -1,0 +1,58 @@
+[project]
+name = "fbenum"
+version = "1.0.0"
+description = "Enhance your enums with robust classes that gracefully handle unknown values through a fallback mechanism, fully compatible with Pydantic."
+authors = [
+    {name = "Vadim Suharnikov", email = "vsuharnikov@gmail.com"},
+]
+dependencies = [
+    "pydantic-core>=2.14.6",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+package-type = "library"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pytest>=7.4.4",
+    "pydantic>=2.5.3",
+    "ruff>=0.1.12",
+    "pre-commit>=3.6.0",
+]
+
+[tool.autopep8]
+max_line_length = 120
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.ruff.lint.isort]
+length-sort = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # isort
+    "I",
+]
