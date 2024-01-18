@@ -1,7 +1,7 @@
 [project]
 name = "fbenum"
-version = "1.0.0"
-description = "Enhance your enums with robust classes that gracefully handle unknown values through a fallback mechanism, fully compatible with Pydantic."
+version = "1.0.1"
+description = "Library provides fallback enum functionality. Fully compatible with pydantic."
 authors = [
     {name = "Vadim Suharnikov", email = "vsuharnikov@gmail.com"},
 ]
@@ -9,8 +9,10 @@ dependencies = [
     "pydantic-core>=2.14.6",
 ]
 requires-python = ">=3.12"
+homepage="https://github.com/vadim-su/fbenum"
 readme = "README.md"
 license = {text = "MIT"}
+keywords = ["enum", "pydantic"]
 
 [build-system]
 requires = ["pdm-backend"]

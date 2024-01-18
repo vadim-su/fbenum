@@ -1,7 +1,6 @@
 # FBEnum
 
-Enhance your enums with robust classes that gracefully handle unknown values
-through a fallback mechanism, fully compatible with Pydantic.
+Library provides fallback enum functionality. Fully compatible with pydantic.
 
 It can be helpful to have a fallback value for enums, so that unknown values can be
 handled gracefully. This is especially useful when working with external data sources
@@ -23,7 +22,7 @@ pip install fbenum
 ### Class mixin
 
 Class mixin can be used to enhance any enum class with fallback functionality.
-It
+
 ```python
 from enum import Enum
 from fbenum.enum import FallbackEnum
@@ -155,6 +154,17 @@ if __name__ == '__main__':
     # on user cretion status always will be known
 
     users = get_users()
+    # user == [
+    #     UserResponse(
+    #         name='John Doe',
+    #         email='test@emaik',
+    #         status=1,
+    #     ),
+    #     UserResponse(
+    #         name='Jane Doe',
+    #         email='test2@emaik',
+    #         status=3, # unknown status
+    # ]
     # on users_getting status can be unknown, so using fallback wrapper for response
     # model will be a good idea to handle unknown values gracefully.
 ```
